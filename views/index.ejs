@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>TimeLine</h1>
+  <hr />
+  <form action="/newPost" method="post">
+    <label for="message">Post a Message</label>
+    <textarea name="message" id="message" placeholder="write your message here.."></textarea>
+    <button>Post a Message</button>
+  </form>
+  <% if(data.length> 0 ){ %>
+    <% data.forEach( (post)=> { %>
+      <div>
+        <p>
+          <%= post.message %>
+        </p>
+      </div>
+      <% }) %>
+        <% } else { %>
+          <div>Nothing</div>
+          <% } %>
+</body>
+
+</html>
